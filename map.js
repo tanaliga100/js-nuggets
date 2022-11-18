@@ -8,11 +8,13 @@ const People = [
     name: "Jordan",
     age: 21,
   },
+
   {
     id: 2,
     name: "Lara",
     age: 11,
   },
+
   {
     id: 3,
     name: "Kimmy",
@@ -32,7 +34,7 @@ const newPeople = People.map((item) => {
 });
 console.log("newPeople", newPeople);
 
-const newPerson = People.map((person) => `<p>${person.name}</p>`);
+const nmewPerson = People.ap((person) => `<p>${person.name}</p>`);
 const el = document.createElement("p");
 const res = document.body.appendChild(el);
 res.innerHTML = newPerson.join("");

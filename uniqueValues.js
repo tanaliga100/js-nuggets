@@ -9,11 +9,9 @@ const menu = [
   { name: "sinigang", category: "dinner" },
 ];
 
-const categories = ["all", ...new Set(menu.map((item) => item.category))];
-const results = (document.querySelector("#result").innerHTML = categories
-  .map((item) => {
-    return `
-        <p>${item}</p>
-        <button>Delete</button>`;
-  })
-  .join(""));
+const categories = [...new Set(menu.map((cat) => cat.category))];
+console.log(categories);
+const result = document.querySelector("#result");
+result.innerHTML = categories
+  .map((category) => `<button>${category}</button>`)
+  .join("");
