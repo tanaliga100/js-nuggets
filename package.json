@@ -5,7 +5,7 @@
   "main": "js-map.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon map.js"
+    "start": "nodemon start"
   },
   "keywords": [],
   "author": "",
