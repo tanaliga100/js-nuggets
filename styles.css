@@ -52,7 +52,7 @@ header {
 .first,
 .second,
 .third {
-  display: none;
+  /* display: none; */
 }
 .prompt {
   color: red;
