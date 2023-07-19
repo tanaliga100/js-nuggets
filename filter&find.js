@@ -2,50 +2,56 @@
 
 // FIND , returns a single instance of an object, returns first match, if no match then it will return undefined
 
+const fruits = ["apple", "orange", "lemon"];
 const people = [
   {
-    name: "Lara",
+    name: "jordan100",
     age: 21,
     position: "Senior",
   },
   {
-    name: "Dan",
+    name: "martin",
     age: 32,
     position: "Junior",
   },
   {
-    name: "Jenn",
+    name: "guy",
     age: 11,
     position: "Intern",
   },
   {
-    name: "Kimmy",
+    name: "will",
     age: 26,
     position: "TL",
   },
 ];
+// FILTER YOUNG PEOPLE
+const youngPeople = people
+  .filter((person) => {
+    return person.age < 25;
+  })
+  .map((person) => person.name.charAt(0).toUpperCase() + person.name.slice(1));
 
-const fruits = ["apple", "orange", "lemon"];
-// filter young people
-const youngPeople = people.filter((item) => {
-  return item.age < 30;
+const dev = people.filter(
+  (person) => person.position.toLowerCase() === "senior"
+);
+
+// NO MATCH
+const designer = people.filter((item) => {
+  return item.position === "Senior";
 });
-console.log(youngPeople);
-// filter object
-const devs = people.filter((dev) => dev.position === "TL");
-console.log(devs);
-//  no match || undefined
-const senior = people.filter((s) => s.position === "senior-dev");
-console.log(senior);
-// find
-const peter = people.find((p) => p.name.toLowerCase() === "lara");
-console.log(peter);
-//find
-const f = fruits.find((f) => f === "lemon");
-console.log(f);
-// no match
-const oldP = people.find((p) => p.age > 45);
-console.log(oldP);
-// multilple matches
-const randomP = people.find((p) => p.age < 35);
-console.log(randomP);
+if (designer.length === 0 || !designer) {
+  // console.log("cant find what you are looking for...");
+} else {
+  // console.log(designer);
+}
+
+// FIND
+const fruit = fruits.find((item) => item === "lemon");
+// console.log(fruit);
+const oldPerson = people.find((person) => person.age > 35);
+// console.log(oldPerson);
+
+// MULTIPLE MATCHES
+const randomPerson = people.find((item) => item.name === "jordan100");
+console.log(randomPerson ? true : "no value");
