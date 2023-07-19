@@ -15,3 +15,9 @@ const uniqueCat = categories.filter((value, key, self) => {
 });
 console.log(categories);
 console.log(uniqueCat);
+
+const res = (document.querySelector("#result").innerHTML = uniqueCat
+  .map((cat) => {
+    return `<button style="padding: .5rem; margin: ".3rem">${cat}</button>`;
+  })
+  .join(""));
