@@ -1,6 +1,6 @@
 // ARRAY DESCTRUCTURING..
 // unpacked variables or values in a set
-// substituting variable when destructuting is feasible but the arrangement is important
+// substituting variable when destructuting is feasible but the order is important
 const fruits = ["apple", "banana", "lemon"];
 const friends = [
   "jordan100",

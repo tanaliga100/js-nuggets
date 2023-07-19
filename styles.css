@@ -26,3 +26,7 @@ header {
   padding: 1rem;
   width: 50%;
 }
+.bold {
+  font-size: large;
+  font-weight: 500;
+}
