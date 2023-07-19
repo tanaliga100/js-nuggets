@@ -57,3 +57,7 @@ header {
 .prompt {
   color: red;
 }
+.btn2 {
+  padding: 0.3rem 1rem;
+  margin: 1rem;
+}

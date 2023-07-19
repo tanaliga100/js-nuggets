@@ -29,6 +29,10 @@ btn.addEventListener("click", () => {
     .then(() => {
       addColor(3000, ".third", "blue");
     })
+    // any use of "then"s will not spits any problem
+    .then(() => console.log("third"))
+    .then(() => console.log("fourth"))
+
     .catch((err) => console.log(err));
 });
 
@@ -44,10 +48,28 @@ function addColor(time, selector, color) {
       reject({ status: `Theres is no such element: '${selector}'` });
     }
   });
-
   console.log(promise);
   return promise;
 }
+
+// USING PROMISE.ALL
+function printName(arg) {
+  console.log(`This is the name : ${arg}`);
+}
+function sayHello(arg) {
+  console.log(`${arg} !!!! `);
+}
+const btn2 = document.querySelector(".btn2");
+btn2.addEventListener("click", () => {
+  Promise.all([
+    printName("Jordan100"),
+    sayHello("Hello World"),
+    setTimeout(() => {
+      alert("Done");
+    }, 5000),
+  ]).catch((error) => console.log(error));
+});
+
 // BASIC EXAMPLE
 
 const value = 2;
