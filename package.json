@@ -5,10 +5,10 @@
   "main": "js-map.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon start"
+    "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "jordantanaliga100",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^2.0.20"

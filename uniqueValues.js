@@ -9,9 +9,9 @@ const menu = [
   { name: "sinigang", category: "dinner" },
 ];
 
-const categories = [...new Set(menu.map((cat) => cat.category))];
+const categories = menu.map((cate) => cate.category);
+const uniqueCat = categories.filter((value, key, self) => {
+  return self.indexOf(value) === key; // only truthy values will be returned.. and note is the first occurence will be considered
+});
 console.log(categories);
-const result = document.querySelector("#result");
-result.innerHTML = categories
-  .map((category) => `<button>${category}</button>`)
-  .join("");
+console.log(uniqueCat);
