@@ -2,33 +2,23 @@
 // create new instance and has a callback function
 // has 3 states : pending, rejected, fulfilled
 
-// const promise = new Promise((resolve, reject) => {
-//   resolve({ state: [1, 232, 23123] });
+const promise = new Promise((resolve, reject) => {
+  resolve({ state: [1, 232, 23123] });
 
-//   reject({ error: "Dont Work" });
-// })
-//   .then((data) => {
-//     console.log("data", data);
-//   })
-//   .catch((error) => console.log(error));
+  reject({ error: "Dont Work" });
+})
+  .then((data) => {
+    console.log("data", data);
+  })
+  .catch((error) => console.log(error));
 
-// console.log(promise);
+console.log(promise);
 
-// let value = 2;
-// const promise2 = new Promise((resolve, reject) => {
-//   const num = Math.floor(Math.random() * 3);
-//   console.log(num);
-//   if (num === value) {
-//     resolve({ status: "you get it right" });
-//   }
-//   reject({ status: "Please try again" });
-// });
-// console.log(promise2);
+// TARGET ELEMENT IN THE DOM
 
-// target element in the dom
-const first = document.querySelector(".first");
-const second = document.querySelector(".second");
-const third = document.querySelector(".third");
+// const first = document.querySelector(".first");
+// const second = document.querySelector(".second");
+// const third = document.querySelector(".third");
 
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", () => {
@@ -44,7 +34,7 @@ btn.addEventListener("click", () => {
 
 function addColor(time, selector, color) {
   const el = document.querySelector(selector);
-  const prom = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (el) {
       setTimeout(() => {
         el.style.color = color;
@@ -54,6 +44,45 @@ function addColor(time, selector, color) {
       reject({ status: `Theres is no such element: '${selector}'` });
     }
   });
-  console.log(prom);
-  return prom;
+
+  console.log(promise);
+  return promise;
 }
+// BASIC EXAMPLE
+
+const value = 2;
+export const request = new Promise((resolve, reject) => {
+  const randomNumber = Math.floor(Math.random() * 3);
+  console.log("randomNumber", randomNumber);
+  if (randomNumber === value) {
+    resolve("you guess the number correctly");
+  } else {
+    reject("wrong number");
+  }
+});
+
+request.then((data) => console.log(data)).catch((err) => console.log(err));
+
+// REAL WORLD EXAMPLE
+
+function makeHttpRequest(url) {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Something went wrong");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        resolve({ msg: "Here is the data", data });
+      })
+      .catch((error) => {
+        reject({ msg: "Oppps", error });
+      });
+  });
+}
+const url = "https://randomuser.me/api";
+const response = makeHttpRequest(url)
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));

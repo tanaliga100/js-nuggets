@@ -2,20 +2,21 @@
 
 const people = [
   {
-    name: "John",
+    name: "Jordan100",
     location: { street: "Grants Ext" },
     timezone: { offset: "GMT +5:00" },
   },
   {
-    name: "Lara",
-    location: { street: "Grants Ext" },
+    name: "Martin100",
+    location: { street: "New York Ext" },
   },
   {
-    name: "Kimmy",
-    location: { street: "Grants Ext" },
+    name: "Mayer100",
+    location: { street: "Manchester Ext" },
     timezone: { offset: "GMT +5:00" },
   },
 ];
+
 const info = () => {
   people.forEach((element) => {
     const data = `${element.name} resides in ${element.location?.street} at ${
