@@ -14,6 +14,7 @@ const passwordInput = document.createElement("input");
 const genderRadio = document.createElement("div"); // Create a div to hold the radio buttons
 const statusSelect = document.createElement("select"); // Use select element for the status
 const submitButton = document.createElement("button");
+const messageBox = document.querySelector(".message");
 
 // 2. SET THE ATTRIBUTES AND CLASSES
 nameInput.setAttribute("type", "text");
@@ -114,17 +115,46 @@ document.body.appendChild(container);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(e.currentTarget);
-
-  console.log("formData", formData);
-  const entries = [...formData.entries()];
-  console.log("entries", entries);
+  // VALIDATIONS HERE...
   const values = [...formData.values()];
-  console.log("values", values);
-  const keys = [...formData.keys()];
-  console.log("keys", keys);
+  if (values.includes("")) {
+    showMessage("Fields are required");
+    setTimeout(() => {
+      hideMessage();
+    }, 1000);
+    return;
+  }
+  //   const hasName = formData.get("name");
+  //   const hasEmail = formData.get("email");
+  //   const hasPassword = formData.get("password");
+  //   if (!hasName || !hasEmail || !hasPassword) {
+  // }
+  else {
+    // need to transform it to json object before passing it to the server like the implementation below
+    const formObject = Object.fromEntries(formData);
+    showMessage("Submitting....");
+    setTimeout(() => {
+      showMessage("Form Submitted sucessfully");
+      setTimeout(() => {
+        hideMessage();
+      }, 3000);
+    }, 2000);
 
-  // iterate over with for-of
-  for (let [name, value] of formData) {
-    console.log("prop", value);
+    e.currentTarget.reset();
   }
 });
+
+//   const entries = [...formData.entries()];
+//   console.log("entries", entries);
+//   const values = [...formData.values()];
+//   console.log("values", values);
+//   const keys = [...formData.keys()];
+//   console.log("keys", keys);
+
+function showMessage(message) {
+  messageBox.textContent = message;
+  messageBox.style.display = "block";
+}
+function hideMessage() {
+  messageBox.style.display = "none";
+}
