@@ -8,12 +8,26 @@ const person = {
   name: "dan",
   age: 26,
   status: "dev",
-};              
+};
 
-const results = Object.entries(person);
-// mep method
-const newResults = results.map((item, key) => {
+const keys = Object.keys(person);
+console.log(keys);
+
+const values = Object.values(person);
+console.log(values);
+
+const result = Object.entries(person);
+console.log(result);
+
+// USING MAP METHOD
+const newResult = result.map((item) => {
   const [first, second] = item;
-  return { first, second };
+  return first;
 });
-console.log(newResults[0], newResults[2], ["all", ...newResults]);
+
+console.log(newResult);
+
+// USING FOR-OF LOOP
+for (const [first, second] of result) {
+  console.log(first, second);
+}
