@@ -34,9 +34,26 @@ header {
   padding: 0.3rem 1rem;
   margin: 1rem;
 }
-
-.wrapper {
+.container {
+  display: block;
+  gap: 1rem;
+}
+form {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.name,
+.email,
+.password {
+  padding: 0.3rem;
+  min-width: 80%;
+}
+.wrapper {
+  display: grid;
   align-items: center;
   justify-content: left;
   margin: 0 auto;
@@ -46,6 +63,9 @@ header {
   /* width: 40%; */
   /* display: inline-block; */
   cursor: pointer;
+  background-color: crimson;
+  color: white;
+  border: none;
   /* margin: 1rem; */
 }
 .first,
