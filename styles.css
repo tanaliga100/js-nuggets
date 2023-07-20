@@ -45,9 +45,13 @@ header {
   width: 100%;
 }
 .btn {
-  width: 40%;
+  /* width: 40%; */
+  /* display: inline-block; */
+  display: flex;
   margin: 0 auto;
+  margin-top: 1rem;
   cursor: pointer;
+  /* margin: 1rem; */
 }
 .first,
 .second,
@@ -60,4 +64,13 @@ header {
 .btn2 {
   padding: 0.3rem 1rem;
   margin: 1rem;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: grey;
+  margin: 0 auto;
+  margin-top: 3rem;
+  /* margin-left: -1rem; */
 }
