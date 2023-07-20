@@ -63,6 +63,8 @@ form {
   /* width: 40%; */
   /* display: inline-block; */
   cursor: pointer;
+  width: 20%;
+  text-align: center;
   background-color: crimson;
   color: white;
   border: none;
