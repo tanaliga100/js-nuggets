@@ -35,21 +35,16 @@ header {
   margin: 1rem;
 }
 
-.container {
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
+.wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
+  align-items: center;
+  justify-content: left;
+  margin: 0 auto;
+  padding: 0.3rem 1rem;
 }
 .btn {
   /* width: 40%; */
   /* display: inline-block; */
-  display: flex;
-  margin: 0 auto;
-  margin-top: 1rem;
   cursor: pointer;
   /* margin: 1rem; */
 }
@@ -73,4 +68,10 @@ header {
   margin: 0 auto;
   margin-top: 3rem;
   /* margin-left: -1rem; */
+}
+li {
+  display: flex;
+  gap: 1rem;
+  color: crimson;
+  padding: 0.3rem;
 }
